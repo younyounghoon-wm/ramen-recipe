@@ -45,6 +45,8 @@ export const useAddTodo = () => {
       ]);
 
       queryClient.setQueryData<ITodo[]>([QUERY_KEYS.GET_TODOS], (old) => {
+        if (!old) return [];
+
         return [
           ...old,
           {
@@ -90,6 +92,8 @@ export const useDeleteTodo = () => {
       ]);
 
       queryClient.setQueryData<ITodo[]>([QUERY_KEYS.GET_TODOS], (old) => {
+        if (!old) return [];
+
         return old.filter((todo) => todo._id !== id);
       });
 
@@ -158,6 +162,8 @@ export const useToggleTodo = () => {
       ]);
 
       queryClient.setQueryData<ITodo[]>([QUERY_KEYS.GET_TODOS], (old) => {
+        if (!old) return [];
+
         return old.map((todo) => {
           if (todo._id === id) {
             return {
