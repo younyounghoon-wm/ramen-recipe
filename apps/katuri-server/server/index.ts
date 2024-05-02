@@ -8,13 +8,15 @@ import mongoose from "mongoose";
 import TodoModel from "./model/TodoModel";
 import todosRouter from "./routes/todos";
 const cors = require("cors");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 
-const uri =
-  "mongodb+srv://younghoondev:asdf0108@cluster0.fqduvxx.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI || "";
+
+console.log("process.env.MONGO_URI", process.env.MONGO_URI);
 
 mongoose
   .connect(uri)
