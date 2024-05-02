@@ -1,3 +1,4 @@
+"use client";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { BiCheckSquare, BiCheckbox } from "react-icons/bi";
 import { ITodo } from "../../types";
