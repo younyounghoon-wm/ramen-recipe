@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   viewport:
     "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
-  icons: [{ rel: "icon", url: "/icons.png", sizes: "192x192" }],
+  icons: [{ rel: "icon", url: "/tt.png", sizes: "192x192" }],
 };
 
 export default function RootLayout({
