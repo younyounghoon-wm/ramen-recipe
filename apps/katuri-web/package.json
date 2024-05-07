@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
+    "@svgr/webpack": "^8.1.0",
     "@tanstack/react-query": "^5.32.0",
     "@vanilla-extract/css": "^1.15.1",
     "axios": "^1.6.8",
+    "jotai": "^2.8.0",
     "next": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

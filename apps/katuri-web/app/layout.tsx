@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import QueryProvider from "../providers/QueryProvider";
-import "./global.css";
+import "../styles/globalStyles.css";
+import ClientProvider from "../providers/ClientProvider";
 
 export const metadata: Metadata = {
   title: "까투리 할일로그",
@@ -18,9 +19,15 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html>
+      <link
+        href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+        rel="stylesheet"
+      />
       <link rel="manifest" href="/manifest.json" />
       <body>
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <ClientProvider>{children}</ClientProvider>
+        </QueryProvider>
       </body>
     </html>
   );
