@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import palette from "../../styles/palette";
+import palette from "../../../../../styles/palette";
 
 export const container = style({
   display: "flex",
