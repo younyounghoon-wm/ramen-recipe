@@ -15,6 +15,6 @@ export const dateStyle = style({
 });
 
 export const description = style({
-  fontSize: "20x",
+  fontSize: "20px",
   color: palette.grey,
 });

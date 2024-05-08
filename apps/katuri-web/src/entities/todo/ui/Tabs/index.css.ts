@@ -9,7 +9,11 @@ export const tabContainer = style({
 export const tabStyle = style({
   flex: 1,
 
-  textAlign: "center",
+  display: "flex",
+  justifyContent: "center",
+  alignContent: "center",
+  gap: "4px",
+
   fontSize: "18px",
   color: palette.white,
 
