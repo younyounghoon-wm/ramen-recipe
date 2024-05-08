@@ -4,10 +4,12 @@ import { formStyle } from "./index.css";
 import Image from "next/image";
 import { useAtom } from "jotai";
 import { todosAtom } from "../../atoms/todoAtoms";
+import useTodayDate from "../../hooks/useTodayDate";
 
 function Form() {
   const [text, setText] = useState("");
   const [todos, setTodos] = useAtom(todosAtom);
+  const { month, date, day } = useTodayDate();
 
   const handleText = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
     setText(value);
@@ -18,7 +20,8 @@ function Form() {
       ...todos,
       {
         _id: Math.random().toString(),
-        title: text,
+        title: `${text}`,
+        createAt: `(${month}.${date}, ${day})`,
         completed: false,
       },
     ]);

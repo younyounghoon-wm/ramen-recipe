@@ -8,9 +8,19 @@ export const todoStyle = style({
 });
 
 export const textStyle = style({
-  fontSize: "20px",
+  display: "flex",
+  alignItems: "center",
+
+  fontSize: "24px",
   fontWeight: "bold",
   color: palette.white,
+
+  gap: "8px",
+});
+
+export const createdAtStyle = style({
+  fontSize: "14px",
+  color: palette.grey,
 });
 
 export const completedStyle = style({

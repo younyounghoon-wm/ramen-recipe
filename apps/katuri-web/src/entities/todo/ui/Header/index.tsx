@@ -1,15 +1,13 @@
+import useTodayDate from "../../hooks/useTodayDate";
 import { dateStyle, description, headerStyle } from "./index.css";
 
 function Header() {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = (today.getMonth() + 1).toString().padStart(2, "0");
-  const date = today.getDate().toString().padStart(2, "0");
+  const { year, month, date, day } = useTodayDate();
 
   return (
     <header className={headerStyle}>
       <h1 className={dateStyle}>
-        {year}.{month}.{date}
+        {year}.{month}.{date} ({day})
       </h1>
       <span className={description}>do it-list</span>
     </header>
