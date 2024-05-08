@@ -2,7 +2,7 @@
   "name": "까투리 할일로그",
   "short_name": "투리로그",
   "description": "할일을 기록하세요",
-  "theme_color": "#fff200",
+  "theme_color": "#000000",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
@@ -14,5 +14,6 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "orientation": "any"
 }

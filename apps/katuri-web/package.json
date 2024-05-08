@@ -32,6 +32,7 @@
     "@vanilla-extract/next-plugin": "^2.4.0",
     "eslint": "^8.57.0",
     "next-pwa": "^5.6.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "url-loader": "^4.1.1"
   }
 }

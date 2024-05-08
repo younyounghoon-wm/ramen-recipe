@@ -8,7 +8,7 @@ export const todoStyle = style({
 });
 
 export const textStyle = style({
-  fontSize: "14px",
+  fontSize: "20px",
   fontWeight: "bold",
   color: palette.white,
 });
