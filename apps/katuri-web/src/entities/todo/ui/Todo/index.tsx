@@ -2,7 +2,7 @@ import Image from "next/image";
 import CheckDone from "../../../../../public/checkDone.svg";
 import CheckEmpty from "../../../../../public/checkEmpty.svg";
 import Delete from "../../../../../public/delete.svg";
-import { textStyle, todoStyle } from "./index.css";
+import { completedStyle, textStyle, todoStyle } from "./index.css";
 import { ITodo } from "../../../../../types";
 import { useAtom } from "jotai";
 import { todosAtom } from "../../atoms/todoAtoms";
@@ -31,7 +31,7 @@ function Todo({ _id, title, completed }: ITodo) {
         height={24}
         onClick={handleToggle}
       />
-      <p className={textStyle}>{title}</p>
+      <p className={`${textStyle} ${completed && completedStyle}`}>{title}</p>
       <Image
         src={Delete}
         alt="checkDone"

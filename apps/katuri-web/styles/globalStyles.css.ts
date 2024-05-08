@@ -15,3 +15,7 @@ globalStyle("input", {
   padding: "0",
   margin: "0",
 });
+
+globalStyle("button", {
+  cursor: "pointer",
+});

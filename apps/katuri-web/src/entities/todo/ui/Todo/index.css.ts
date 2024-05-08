@@ -12,3 +12,8 @@ export const textStyle = style({
   fontWeight: "bold",
   color: palette.white,
 });
+
+export const completedStyle = style({
+  textDecoration: "line-through",
+  color: palette.grey,
+});
