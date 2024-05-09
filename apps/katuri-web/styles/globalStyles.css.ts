@@ -3,6 +3,7 @@ import palette from "./palette";
 
 globalStyle("*", {
   boxSizing: "border-box",
+  fontFamily: "Pretendard !important",
 });
 
 globalStyle("html, body, main", {

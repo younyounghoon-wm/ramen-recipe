@@ -11,6 +11,6 @@ export const container = style({
 export const todoPageStyle = style({
   width: "100vw",
   maxWidth: "800px",
-  padding: "50px 24px",
+  padding: "32px 24px",
   background: palette.black,
 });

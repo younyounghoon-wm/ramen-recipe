@@ -23,6 +23,10 @@ export default function RootLayout({
         href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
         rel="stylesheet"
       />
+      <link
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+        rel="stylesheet"
+      />
       <link rel="manifest" href="/manifest.json" />
       <body>
         <QueryProvider>
