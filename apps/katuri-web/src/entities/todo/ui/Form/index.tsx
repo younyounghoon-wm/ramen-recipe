@@ -16,6 +16,8 @@ function Form() {
   };
 
   const addTodo = () => {
+    if (text === "") return;
+
     setTodos([
       ...todos,
       {
@@ -30,7 +32,13 @@ function Form() {
   };
 
   return (
-    <form className={formStyle}>
+    <form
+      className={formStyle}
+      onSubmit={(e) => {
+        e.preventDefault();
+        addTodo();
+      }}
+    >
       <Input text={text} onChange={handleText} />
       <Image
         src="/add.svg"
