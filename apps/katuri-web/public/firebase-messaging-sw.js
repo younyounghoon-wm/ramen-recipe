@@ -3,10 +3,10 @@
 self.__WB_DISABLE_DEV_LOGS = true;
 
 importScripts(
-  "https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"
+  "https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"
 );
 importScripts(
-  "https://www.gstatic.com/firebasejs/9.5.0/firebase-messaging-compat.js"
+  "https://www.gstatic.com/firebasejs/10.11.1/firebase-messaging-compat.js"
 );
 
 const firebaseApp = firebase.initializeApp({
@@ -33,22 +33,14 @@ if (isSupported) {
     const reservationId = parseInt(reservation);
     self.registration.showNotification(title, { body });
   });
+
+  self.addEventListener("push", function (event) {
+    // 받은 푸시 데이터를 처리해 알림으로 띄우는 내용
+    alert("push event");
+  });
 }
 
-self.addEventListener("push", function (event) {
-  // 받은 푸시 데이터를 처리해 알림으로 띄우는 내용
-  alert("push event");
-});
+self.addEventListener("push", function (event) {});
 
-onBackgroundMessage(messaging, (payload) => {
-  console.log(
-    "[firebase-messaging-sw.js] Received background message ",
-    payload
-  );
-  // Customize notification here
-
-  self.registration.showNotification(
-    payload.notification?.title,
-    payload.notification?.body
-  );
-});
+// 클릭 이벤트 처리 - 알림을 클릭하면 사이트로 이동한다.
+self.addEventListener("notificationclick", function (event) {});

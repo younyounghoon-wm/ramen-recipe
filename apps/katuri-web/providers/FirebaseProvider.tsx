@@ -24,6 +24,18 @@ const firebaseConfig = {
 
 function FirebaseProvider({ children }: PropsWithChildren) {
   useEffect(() => {
+    Notification.requestPermission()
+      .then((permission) => {
+        if (permission === "granted") {
+          console.log("Notification permission granted.");
+          alert("Notification permission granted.");
+        }
+      })
+      .catch((err) => {
+        console.log("Error occurred while requesting permission: ", err);
+        alert("Error occurred while requesting permission: " + err);
+      });
+
     const firebaseApp = initializeApp(firebaseConfig);
     const messaging = getMessaging(firebaseApp);
 
