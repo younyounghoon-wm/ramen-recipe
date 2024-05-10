@@ -3,6 +3,7 @@
 import { PropsWithChildren, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { onBackgroundMessage } from "firebase/messaging/sw";
 
 // Import the functions you need from the SDKs you need
 
@@ -23,25 +24,17 @@ const firebaseConfig = {
 
 function FirebaseProvider({ children }: PropsWithChildren) {
   useEffect(() => {
-    console.log("FirebaseProvider");
-
     const firebaseApp = initializeApp(firebaseConfig);
-
     const messaging = getMessaging(firebaseApp);
-
-    const bedong = async () => {
-      const currentToken = await getToken(messaging, {
-        vapidKey:
-          "BAzCN3qAdqtUTcehed7rXXa7UA9M1ZHK0OjoBTJD5YSpMIWQbuwGaWbimv1jzEbTx0PIOIit_PnuoAx3e5giiOc",
-      });
-      console.log("Current token: ", currentToken);
-    };
-
-    bedong();
 
     onMessage(messaging, (payload) => {
       console.log("Message received. ", payload);
       // ...
+      alert(
+        "Message received. " +
+          payload.notification?.title +
+          payload.notification?.body
+      );
     });
   }, []);
 

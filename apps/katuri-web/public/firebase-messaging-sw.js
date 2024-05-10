@@ -22,6 +22,7 @@ const firebaseApp = firebase.initializeApp({
 // Retrieve an instance of Firebase Messaging so that it can handle background messages.
 const isSupported = firebase.messaging.isSupported();
 if (isSupported) {
+  console.log("isSupported", isSupported);
   const messaging = firebase.messaging();
 
   messaging.onBackgroundMessage((payload) => {
@@ -33,3 +34,21 @@ if (isSupported) {
     self.registration.showNotification(title, { body });
   });
 }
+
+self.addEventListener("push", function (event) {
+  // 받은 푸시 데이터를 처리해 알림으로 띄우는 내용
+  alert("push event");
+});
+
+onBackgroundMessage(messaging, (payload) => {
+  console.log(
+    "[firebase-messaging-sw.js] Received background message ",
+    payload
+  );
+  // Customize notification here
+
+  self.registration.showNotification(
+    payload.notification?.title,
+    payload.notification?.body
+  );
+});
