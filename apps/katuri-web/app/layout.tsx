@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import QueryProvider from "../providers/QueryProvider";
 import "../styles/globalStyles.css";
 import ClientProvider from "../providers/ClientProvider";
+import FirebaseProvider from "../providers/FirebaseProvider";
 
 export const metadata: Metadata = {
   title: "까투리 할일로그",
@@ -34,7 +35,9 @@ export default function RootLayout({
       />
       <body>
         <QueryProvider>
-          <ClientProvider>{children}</ClientProvider>
+          <FirebaseProvider>
+            <ClientProvider>{children}</ClientProvider>
+          </FirebaseProvider>
         </QueryProvider>
       </body>
     </html>
