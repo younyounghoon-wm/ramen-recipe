@@ -11,7 +11,7 @@ export const textStyle = style({
   display: "flex",
   alignItems: "center",
 
-  fontSize: "24px",
+  fontSize: "20px",
   fontWeight: "bold",
   color: palette.white,
 
@@ -19,7 +19,7 @@ export const textStyle = style({
 });
 
 export const createdAtStyle = style({
-  fontSize: "14px",
+  fontSize: "12px",
   color: palette.grey,
 });
 

@@ -11,6 +11,7 @@ import {
 import { ITodo } from "../../../../../types";
 import { useAtom } from "jotai";
 import { todosAtom } from "../../atoms/todoAtoms";
+import { removeParentheses } from "../../utils";
 
 function Todo({ _id, title, completed, createAt }: ITodo) {
   const [todos, setTodos] = useAtom(todosAtom);
@@ -38,7 +39,9 @@ function Todo({ _id, title, completed, createAt }: ITodo) {
       />
       <div className={`${textStyle} ${completed && completedStyle}`}>
         {title}
-        <span className={createdAtStyle}>{createAt}</span>
+        <span className={createdAtStyle}>
+          {createAt ? removeParentheses(createAt) : ""}
+        </span>
       </div>
       <Image
         src={Delete}
