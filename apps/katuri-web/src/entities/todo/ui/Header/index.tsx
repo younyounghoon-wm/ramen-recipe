@@ -9,15 +9,14 @@ function Header() {
   };
 
   const handleNoti = () => {
-    Notification.requestPermission()
-      .then((result) => {
-        if (result === "granted") {
-          new Notification("Hello World!");
-        }
-      })
-      .catch((err) => {
-        alert("error");
-      });
+    navigator.serviceWorker.register("sw.js");
+    Notification.requestPermission(function (result) {
+      if (result === "granted") {
+        navigator.serviceWorker.ready.then(function (registration) {
+          registration.showNotification("Notification with ServiceWorker");
+        });
+      }
+    });
   };
 
   return (
