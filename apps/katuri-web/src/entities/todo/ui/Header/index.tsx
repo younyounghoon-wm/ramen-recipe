@@ -9,23 +9,20 @@ function Header() {
   };
 
   const handleNoti = () => {
-    navigator.serviceWorker.register("sw.js");
+    navigator.serviceWorker.register("messaging-sw.js");
     if (Notification.permission === "granted") {
       navigator.serviceWorker.ready.then(function (registration) {
         registration.showNotification("Notification with ServiceWorker");
       });
     }
-    console.log("navigator", navigator);
-    console.log("serviceWorker", navigator.serviceWorker);
 
-    // Notification.requestPermission(function (result) {
-    //   console.log("result", result);
-    //   if (result === "granted") {
-    //     navigator.serviceWorker.ready.then(function (registration) {
-    //       registration.showNotification("Notification with ServiceWorker");
-    //     });
-    //   }
-    // });
+    Notification.requestPermission(function (result) {
+      if (result === "granted") {
+        navigator.serviceWorker.ready.then(function (registration) {
+          registration.showNotification("Notification with ServiceWorker");
+        });
+      }
+    });
   };
 
   return (
