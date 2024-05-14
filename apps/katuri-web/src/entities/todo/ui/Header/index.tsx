@@ -9,17 +9,23 @@ function Header() {
   };
 
   const handleNoti = () => {
-    console.log("navigator", navigator);
-
     navigator.serviceWorker.register("sw.js");
-    Notification.requestPermission(function (result) {
-      console.log("result", result);
-      if (result === "granted") {
-        navigator.serviceWorker.ready.then(function (registration) {
-          registration.showNotification("Notification with ServiceWorker");
-        });
-      }
-    });
+    if (Notification.permission === "granted") {
+      navigator.serviceWorker.ready.then(function (registration) {
+        registration.showNotification("Notification with ServiceWorker");
+      });
+    }
+    console.log("navigator", navigator);
+    console.log("serviceWorker", navigator.serviceWorker);
+
+    // Notification.requestPermission(function (result) {
+    //   console.log("result", result);
+    //   if (result === "granted") {
+    //     navigator.serviceWorker.ready.then(function (registration) {
+    //       registration.showNotification("Notification with ServiceWorker");
+    //     });
+    //   }
+    // });
   };
 
   return (
