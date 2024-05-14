@@ -9,8 +9,11 @@ function Header() {
   };
 
   const handleNoti = () => {
+    console.log("navigator", navigator);
+
     navigator.serviceWorker.register("sw.js");
     Notification.requestPermission(function (result) {
+      console.log("result", result);
       if (result === "granted") {
         navigator.serviceWorker.ready.then(function (registration) {
           registration.showNotification("Notification with ServiceWorker");
