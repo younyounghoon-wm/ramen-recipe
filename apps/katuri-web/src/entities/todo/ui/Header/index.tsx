@@ -27,8 +27,8 @@ function Header() {
 
   return (
     <header className={headerStyle}>
-      <button onClick={handleGo}>go push site</button>
-      <button onClick={handleNoti}>go push site</button>
+      {/* <button onClick={handleGo}>go push site</button> */}
+      {/* <button onClick={handleNoti}>go push site</button> */}
       <h1 className={dateStyle}>
         {year}.{month}.{date} ({day})
       </h1>
