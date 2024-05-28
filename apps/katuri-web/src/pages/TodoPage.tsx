@@ -20,18 +20,9 @@ function TodoPage() {
           "./service-worker.js"
         );
         console.log("서비스 워커 등록 성공: ", registration);
-        // 알림 권한 받기
-        const permission = await Notification.requestPermission();
-        if (permission === "granted") {
-          console.log("알림 권한 허용");
-        }
-        if (permission === "denied") {
-          console.log("알림 권한 거부");
-        }
         return;
       }
     };
-
     setServiceWorker();
   }, []);
 

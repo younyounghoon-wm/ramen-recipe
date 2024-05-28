@@ -9,13 +9,21 @@ function Header() {
 
   const handleNotification = async () => {
     if (notification === "OFF") {
-      // 구독 요청
       const registration = await navigator.serviceWorker.getRegistration();
       if (!registration) {
         console.error("서비스 워커 등록되지 않음");
         return;
       }
 
+      // 알림 권한 요청하기
+      const permission = await Notification.requestPermission();
+
+      if (permission === "denied" || permission === "default") {
+        alert("알림 권한을 허용해주세요.");
+        return;
+      }
+
+      // 구독 요청
       const subscribeInfo = await registration.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey:
@@ -28,7 +36,7 @@ function Header() {
         subscribeInfo
       );
 
-      alert(`구독정보 데이터: ${res.data}`);
+      alert(`구독정보 데이터: ${JSON.stringify(res.data)}`);
       setNotification("ON");
       return;
     }
