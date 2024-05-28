@@ -32,7 +32,7 @@ function Header() {
 
       // 서버에 구독정보 보내기
       const res = await axios.post(
-        "http://localhost:8000/subscribe",
+        "https://f085-61-40-226-242.ngrok-free.app/subscribe",
         subscribeInfo
       );
 
