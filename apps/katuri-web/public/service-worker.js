@@ -3,11 +3,11 @@ self.addEventListener("activate", () => {
 });
 
 self.addEventListener("push", (event) => {
-  const data = event.data.json();
+  const data = event.data.text();
 
   const title = "Paper";
   const options = {
-    body: "푸시 테스트 중입니다.",
+    body: "진주 하이!",
     badge: data.badge,
     icon: data.icon,
   };

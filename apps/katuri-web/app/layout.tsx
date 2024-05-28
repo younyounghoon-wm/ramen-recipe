@@ -34,10 +34,10 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
         />
-        <meta
+        {/* <meta
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
-        />
+        /> */}
       </head>
       <body>
         <QueryProvider>

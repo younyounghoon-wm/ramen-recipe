@@ -3,6 +3,10 @@ import useTodayDate from "../../hooks/useTodayDate";
 import { dateStyle, description, headerStyle } from "./index.css";
 import axios from "axios";
 
+const BASE_URL = "https://e8eb-59-12-102-133.ngrok-free.app";
+const PUBLIC_KEY =
+  "BGEGP34Euo3gq0WJdveZbRFY7awmPeNir7zve6sM30_S2sWB1k9hBFlo9LDbYZp97gxo7_j_z35mTFXTki5bqxU";
+
 function Header() {
   const { year, month, date, day } = useTodayDate();
   const [notification, setNotification] = useState<"ON" | "OFF">("OFF");
@@ -26,15 +30,11 @@ function Header() {
       // 구독 요청
       const subscribeInfo = await registration.pushManager.subscribe({
         userVisibleOnly: true,
-        applicationServerKey:
-          "BBz-aLS6tcINQi2bVz2c5wJDnnkWr5EaseoR38VoSfJjeivq1bioH1RRqAD1acRhTrDgab6yqn__Uva9t_D9aRo",
+        applicationServerKey: PUBLIC_KEY,
       });
 
       // 서버에 구독정보 보내기
-      const res = await axios.post(
-        "https://f085-61-40-226-242.ngrok-free.app/subscribe",
-        subscribeInfo
-      );
+      const res = await axios.post(`${BASE_URL}/push`, subscribeInfo);
 
       alert(`구독정보 데이터: ${JSON.stringify(res.data)}`);
       setNotification("ON");
