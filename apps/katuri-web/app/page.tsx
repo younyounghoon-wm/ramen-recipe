@@ -1,4 +1,3 @@
-"use client";
 import TodoPage from "../src/pages/TodoPage";
 
 function Page() {

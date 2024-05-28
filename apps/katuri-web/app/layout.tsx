@@ -20,19 +20,21 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html>
-      <link
-        href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-        rel="stylesheet"
-      />
-      <link rel="manifest" href="/manifest.json" />
-      <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
-      />
+      <head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+          rel="stylesheet"
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        />
+      </head>
       <body>
         <QueryProvider>
           <FirebaseProvider>
