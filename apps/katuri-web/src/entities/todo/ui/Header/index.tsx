@@ -27,6 +27,8 @@ function Header() {
         "http://localhost:8000/subscribe",
         subscribeInfo
       );
+
+      alert(`구독정보 데이터: ${res.data}`);
       setNotification("ON");
       return;
     }
