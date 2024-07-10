@@ -3,6 +3,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const BASE_URL = "https://push-server.fly.dev/";
+const Axios = axios.create({
+  baseURL: BASE_URL,
+});
+
 function Home() {
   const [subscribeList, setSubscribeList] = useState<PushSubscriptionJSON[]>(
     []
@@ -10,14 +15,14 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios("http://localhost:3001/subscribeList");
+      const response = await Axios.get("/subscriptions");
       setSubscribeList(response.data);
     };
     fetchData();
   }, []);
 
   const handlePush = (subscribe: PushSubscriptionJSON) => {
-    axios.post("http://localhost:3001/push", subscribe);
+    Axios.post("/push", subscribe);
   };
 
   return (
