@@ -1,9 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { MBTIResult } from "./_types";
-import Result from "./_components/Result";
-import Quiz from "./_components/Quiz";
 import Image from "next/image";
 import Link from "next/link";
 
