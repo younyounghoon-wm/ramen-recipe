@@ -5,7 +5,7 @@ self.addEventListener("activate", () => {
 self.addEventListener("push", (event) => {
   const data = event.data.text();
 
-  const title = "Paper";
+  const title = "투리로그";
   const options = {
     body: "진주 하이!",
     badge: data.badge,
