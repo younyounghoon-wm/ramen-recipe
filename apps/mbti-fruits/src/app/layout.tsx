@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "당신의 과일을 찾아보세요",
     siteName: "과일 MBTI",
     url: process.env.NEXT_PUBLIC_SELF_DOMAIN,
-    images: `${process.env.NEXT_PUBLIC_SELF_DOMAIN}/og/og.png`,
+    images: `/og/og.png`,
   },
 };
 
