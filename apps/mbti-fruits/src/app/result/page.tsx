@@ -7,8 +7,12 @@ import { fruitsByMBTI } from "../_define/mbti";
 function ResultPage() {
   const { mbtiScore, mbtiResult } = useMbtiStore();
 
+  if (!mbtiResult) {
+    return null;
+  }
+
   const { image, name, characteristics, compatibility, bgColor, boxColor } =
-    fruitsByMBTI[mbtiResult!];
+    fruitsByMBTI[mbtiResult];
 
   return (
     <div
